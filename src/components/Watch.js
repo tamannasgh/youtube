@@ -5,6 +5,7 @@ import { GET_VIDEO_BY_ID } from "../config";
 import { useSearchParams } from "react-router-dom";
 import SuggestionVideos from "./SuggestionVideos";
 import Comments from "./Comments";
+import LiveComments from "./LiveComments";
 
 const Watch = () => {
 	const dispatch = useDispatch();
@@ -50,6 +51,9 @@ const Watch = () => {
 			</div>
 
 			<div className="col-span-4 ml-5">
+				<div>
+					<LiveComments />
+				</div>
 				{video.id ? (
 					<SuggestionVideos categoryId={video.snippet.categoryId} />
 				) : (

@@ -12,7 +12,7 @@ const SuggestionVideos = ({ categoryId }) => {
 				GET_SUGGESTION_VIDEOES_BY_CATEGORY_ID + categoryId
 			);
 			const data = await res.json();
-			console.log(data);
+			// console.log(data);
 			setsuggestionVideos(data.items);
 		}
 		getSuggestionVideos();

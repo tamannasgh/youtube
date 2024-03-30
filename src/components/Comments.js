@@ -2,13 +2,9 @@ import React from "react";
 import { BiSolidUserCircle } from "react-icons/bi";
 
 const Comment = ({ comment }) => {
-	console.log("yo");
 	return (
 		<>
-			<div
-				key={comment.id}
-				className="flex mb-3"
-			>
+			<div className="flex mb-3">
 				<div>
 					<BiSolidUserCircle
 						size={37}
@@ -24,7 +20,10 @@ const Comment = ({ comment }) => {
 			</div>
 			<div className="ml-7 border-l border-gray-400">
 				{comment.replies.map((reply) => (
-					<Comment comment={reply} />
+					<Comment
+						key={reply.id}
+						comment={reply}
+					/>
 				))}
 			</div>
 		</>
@@ -167,12 +166,15 @@ const Comments = () => {
 			],
 		},
 	];
-	console.log(comments);
+	// console.log(comments);
 
 	return (
 		<div className="mt-7">
 			{comments.map((comment) => (
-				<Comment comment={comment} />
+				<Comment
+					key={comment.id}
+					comment={comment}
+				/>
 			))}
 		</div>
 	);
